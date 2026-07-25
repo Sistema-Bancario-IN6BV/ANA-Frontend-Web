@@ -1,0 +1,96 @@
+/*
+  ANA design tokens — "Vitality Systems".
+  Identity: Emerald (primary action) + Navy (authority/trust).
+  Clean clinical-lite aesthetic for healthcare.
+*/
+:root {
+  /* Primary — Emerald Green */
+  --color-lamplight: #10b981;
+  --color-lamplight-dim: #6ffbbe;
+  --color-lamplight-700: #006c49;
+
+  /* Secondary — Navy Blue */
+  --color-dusk: #1e3a8a;
+  --color-dusk-600: #264191;
+  --color-dusk-700: #1d3989;
+
+  /* Surfaces */
+  --color-parchment: #f9f9ff;
+  --color-parchment-dim: #e7eefe;
+
+  /* Status tiers — DESIGN.md: blue=low, amber=medium, red=high/critical */
+  --color-sage: #4059aa;
+  --color-sage-dim: #dce1ff;
+  --color-clay: #795900;
+  --color-clay-dim: #ffdf9f;
+  --color-ember: #ba1a1a;
+  --color-ember-dim: #ffdad6;
+
+  /* Text */
+  --color-ink: #151c27;
+  --color-ink-soft: #3c4a42;
+  --color-white: #ffffff;
+
+  /* Borders */
+  --color-border: #bbcabf;
+
+  /* Material Design 3 aliases — same values, MD-aligned names */
+  --color-primary: #006c49;
+  --color-primary-container: #10b981;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #00422b;
+  --color-secondary: #4059aa;
+  --color-secondary-container: #dce1ff;
+  --color-on-secondary: #ffffff;
+  --color-on-secondary-container: #1d3989;
+  --color-tertiary: #795900;
+  --color-tertiary-container: #ce9a00;
+  --color-on-tertiary: #ffffff;
+  --color-surface: #f9f9ff;
+  --color-surface-container: #e7eefe;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f0f3ff;
+  --color-surface-container-high: #e2e8f8;
+  --color-surface-dim: #d3daea;
+  --color-on-surface: #151c27;
+  --color-on-surface-variant: #3c4a42;
+  --color-outline: #6c7a71;
+  --color-outline-variant: #bbcabf;
+  --color-inverse-surface: #2a313d;
+  --color-inverse-on-surface: #ebf1ff;
+
+  /* Risk semantics */
+  --risk-bajo: var(--color-sage);
+  --risk-medio: var(--color-clay);
+  --risk-alto: #e07000;
+  --risk-critico: var(--color-ember);
+
+  /* Type — Manrope only */
+  --font-display: 'Manrope', system-ui, sans-serif;
+  --font-body: 'Manrope', system-ui, sans-serif;
+  --font-mono: 'Manrope', 'Consolas', monospace;
+
+  /* Spacing (8px base) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+
+  /* Radius — DESIGN.md: cards 16px, buttons 8px, pills 9999px */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 9999px;
+
+  /* Elevation — cool shadow */
+  --shadow-soft: 0 4px 12px rgba(21, 28, 39, 0.07);
+  --shadow-lifted: 0 8px 24px rgba(21, 28, 39, 0.12);
+
+  /* Layout */
+  --sidebar-width: 248px;
+  --content-max: 1180px;
+}
