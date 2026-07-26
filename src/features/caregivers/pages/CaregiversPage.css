@@ -1,0 +1,38 @@
+.caregiver-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--space-4);
+}
+
+.caregiver-card__top {
+  display: flex;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.caregiver-card__id {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.caregiver-card__notes {
+  margin-top: var(--space-2);
+  font-size: 14px;
+}
+
+.caregiver-card__meta {
+  margin-top: var(--space-2);
+  font-size: 13px;
+  color: var(--color-ink-soft);
+}
+
+.caregiver-card__remove {
+  margin-top: var(--space-3);
+  background: none;
+  border: none;
+  color: var(--color-clay);
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  padding: 0;
+}
