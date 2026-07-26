@@ -1,0 +1,23 @@
+.banner {
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: var(--space-4);
+}
+
+.banner--error {
+  background: var(--color-clay-dim);
+  color: var(--color-ember);
+}
+
+.banner--success {
+  background: var(--color-sage-dim);
+  color: #3d5642;
+}
+
+.banner--info {
+  background: var(--color-parchment-dim);
+  color: var(--color-ink-soft);
+  border: 1px solid var(--color-border);
+}

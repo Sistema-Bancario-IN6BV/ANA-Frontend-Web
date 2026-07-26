@@ -1,0 +1,23 @@
+.empty-state {
+  text-align: center;
+  padding: var(--space-7) var(--space-5);
+  color: var(--color-ink-soft);
+}
+
+.empty-state__glow {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto var(--space-4);
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--color-lamplight-dim), transparent 70%);
+}
+
+.empty-state__title {
+  font-size: 20px;
+  margin-bottom: var(--space-2);
+}
+
+.empty-state__desc {
+  max-width: 360px;
+  margin: 0 auto var(--space-4);
+}

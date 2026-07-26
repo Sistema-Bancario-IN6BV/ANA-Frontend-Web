@@ -1,0 +1,51 @@
+import {
+  Home,
+  MessageCircle,
+  Droplets,
+  HeartPulse,
+  Users,
+  Bell,
+  User,
+  ShieldCheck,
+  Brain,
+  Camera,
+  Pill,
+} from 'lucide-react';
+import { ADMIN_ROLE, ELDERLY_ROLE, CAREGIVER_ROLE } from '../../shared/constants/roles';
+
+export const NAV_BY_ROLE = {
+  [ELDERLY_ROLE]: [
+    { to: '/', label: 'Inicio',         Icon: Home,          end: true },
+    { to: '/ana',            label: 'Hablar con ANA',  Icon: MessageCircle },
+    { to: '/scan',           label: 'Escanear',        Icon: Camera },
+    { to: '/medications',    label: 'Mis medicamentos', Icon: Pill },
+    { to: '/glucose',        label: 'Mi glucosa',      Icon: Droplets },
+    { to: '/blood-pressure', label: 'Mi presión',      Icon: HeartPulse },
+    { to: '/caregivers',     label: 'Mis cuidadores',  Icon: Users },
+    { to: '/alerts',         label: 'Mis alertas',     Icon: Bell },
+    { to: '/profile',        label: 'Mi perfil',       Icon: User },
+  ],
+  [CAREGIVER_ROLE]: [
+    { to: '/', label: 'Inicio',              Icon: Home,          end: true },
+    { to: '/caregivers',     label: 'Mis adultos mayores', Icon: Users },
+    { to: '/insights',       label: 'Bienestar emocional', Icon: Brain },
+    { to: '/scan',           label: 'Escanear',        Icon: Camera },
+    { to: '/medications',    label: 'Medicamentos',    Icon: Pill },
+    { to: '/glucose',        label: 'Glucosa',         Icon: Droplets },
+    { to: '/blood-pressure', label: 'Presión',         Icon: HeartPulse },
+    { to: '/alerts',         label: 'Alertas',         Icon: Bell },
+    { to: '/profile',        label: 'Mi perfil',       Icon: User },
+  ],
+  [ADMIN_ROLE]: [
+    { to: '/', label: 'Inicio',              Icon: Home,          end: true },
+    { to: '/users',          label: 'Usuarios y roles',    Icon: ShieldCheck },
+    { to: '/caregivers',     label: 'Vínculos cuidador',   Icon: Users },
+    { to: '/insights',       label: 'Bienestar emocional', Icon: Brain },
+    { to: '/scan',           label: 'Escanear',            Icon: Camera },
+    { to: '/medications',    label: 'Medicamentos',        Icon: Pill },
+    { to: '/glucose',        label: 'Glucosa',             Icon: Droplets },
+    { to: '/blood-pressure', label: 'Presión',             Icon: HeartPulse },
+    { to: '/alerts',         label: 'Alertas',             Icon: Bell },
+    { to: '/profile',        label: 'Mi perfil',           Icon: User },
+  ],
+};
