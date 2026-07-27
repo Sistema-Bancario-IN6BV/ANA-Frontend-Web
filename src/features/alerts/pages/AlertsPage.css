@@ -1,0 +1,7 @@
+.alerts-filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 220px));
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+  max-width: 720px;
+}
