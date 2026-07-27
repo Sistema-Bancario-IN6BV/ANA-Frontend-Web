@@ -5,21 +5,16 @@ import { useAuth } from '../../../shared/hooks/useAuth';
 
 export const useAlerts = () => {
   const [alerts, setAlerts] = useState([]);
-  const [filters, setFilters] = useState({ severity: '', type: '', isRead: '' });
   const { loading, error, run } = useAsync();
   const { user } = useAuth();
 
   const load = useCallback(
     () =>
       run(async () => {
-        const params = {};
-        if (filters.severity) params.severity = filters.severity;
-        if (filters.type) params.type = filters.type;
-        if (filters.isRead) params.isRead = filters.isRead;
-        const res = await alertsApi.list(params);
+        const res = await alertsApi.list();
         setAlerts(res.data || []);
       }),
-    [run, filters]
+    [run]
   );
 
   useEffect(() => {
@@ -27,8 +22,7 @@ export const useAlerts = () => {
   }, [load]);
 
   const markAsRead = (id) => run(() => alertsApi.markAsRead(id, user?.username)).then(() => load());
-
   const deactivate = (id) => run(() => alertsApi.deactivate(id)).then(() => load());
 
-  return { alerts, loading, error, filters, setFilters, markAsRead, deactivate };
+  return { alerts, loading, error, markAsRead, deactivate, reload: load };
 };
