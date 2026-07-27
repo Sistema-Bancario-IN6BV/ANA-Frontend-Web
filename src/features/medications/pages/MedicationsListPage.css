@@ -1,0 +1,61 @@
+.medication-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: var(--space-4);
+}
+
+.medication-card__top {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+.medication-card__name {
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--color-ink);
+}
+
+.medication-card__dose {
+  font-size: 13px;
+  color: var(--color-ink-soft);
+}
+
+.medication-card__times {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+.medication-card__notes {
+  margin-top: var(--space-2);
+  font-size: 14px;
+}
+
+.medication-card__last-taken {
+  margin-top: var(--space-2);
+  font-size: 12px;
+  color: var(--color-ink-soft);
+}
+
+.medication-card__actions {
+  display: flex;
+  gap: var(--space-4);
+  margin-top: var(--space-3);
+}
+
+.medication-card__actions button {
+  background: none;
+  border: none;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  padding: 0;
+  color: var(--color-dusk);
+}
+
+.medication-card__remove {
+  color: var(--color-clay) !important;
+}
