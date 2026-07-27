@@ -1,0 +1,63 @@
+.home-greeting {
+  font-size: 34px;
+  margin-bottom: var(--space-2);
+}
+
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-4);
+  margin-top: var(--space-5);
+}
+
+.home-tile {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  text-decoration: none;
+  color: var(--color-ink);
+}
+
+.home-tile__icon {
+  font-size: 28px;
+}
+
+.home-tile__title {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.home-tile__desc {
+  color: var(--color-ink-soft);
+  font-size: 14px;
+}
+
+.home-cta {
+  margin-top: var(--space-5);
+}
+
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: var(--space-4);
+  margin-top: var(--space-5);
+}
+
+.stat-tile {
+  text-align: left;
+}
+
+.stat-tile__value {
+  font-family: var(--font-mono);
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--color-dusk);
+}
+
+.stat-tile__label {
+  color: var(--color-ink-soft);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
