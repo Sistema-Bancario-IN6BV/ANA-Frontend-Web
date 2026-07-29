@@ -1,0 +1,61 @@
+.alert-card {
+  display: flex;
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+  margin-bottom: var(--space-3);
+}
+
+.alert-card__bar {
+  width: 6px;
+  background: var(--alert-color);
+  flex-shrink: 0;
+}
+
+.alert-card__body {
+  padding: var(--space-4) var(--space-5);
+  flex: 1;
+}
+
+.alert-card--unread .alert-card__body {
+  background: linear-gradient(90deg, color-mix(in srgb, var(--alert-color) 6%, white), transparent 40%);
+}
+
+.alert-card__top {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-2);
+}
+
+.alert-card__type {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.alert-card__time {
+  margin-left: auto;
+  font-size: 13px;
+  color: var(--color-ink-soft);
+}
+
+.alert-card__message {
+  font-size: 15px;
+}
+
+.alert-card__actions {
+  display: flex;
+  gap: var(--space-4);
+  margin-top: var(--space-3);
+}
+
+.alert-card__actions button {
+  background: none;
+  border: none;
+  padding: 0;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  color: var(--color-lamplight-700);
+}

@@ -1,0 +1,47 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  width: 100%;
+}
+
+.field__label {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--color-ink-soft);
+}
+
+.field__control {
+  font-family: var(--font-body);
+  font-size: 16px;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--color-border);
+  background: var(--color-white);
+  color: var(--color-ink);
+  min-height: 48px;
+}
+
+.field__control:focus {
+  border-color: var(--color-lamplight);
+}
+
+.field__control--error {
+  border-color: var(--color-clay);
+}
+
+.field__hint {
+  font-size: 13px;
+  color: var(--color-ink-soft);
+}
+
+.field__error {
+  font-size: 13px;
+  color: var(--color-clay);
+  font-weight: 700;
+}
+
+textarea.field__control {
+  min-height: 96px;
+  resize: vertical;
+}
