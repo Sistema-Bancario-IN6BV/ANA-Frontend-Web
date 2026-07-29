@@ -1,46 +1,55 @@
-import { useState } from 'react';
-import { View } from 'react-native';
-import { TextField, Button, Banner } from '../../../shared/components';
-import { spacing } from '../../../shared/constants/theme';
+import { useForm } from 'react-hook-form';
+import { Input, Button, Banner } from '../../../shared/components';
 
 const TIME_LIST_PATTERN = /^([01]\d|2[0-3]):[0-5]\d(\s*,\s*([01]\d|2[0-3]):[0-5]\d)*$/;
 
 export const MedicationForm = ({ defaultValues, onSubmit, loading, error }) => {
-  const [name, setName] = useState(defaultValues?.name || '');
-  const [dose, setDose] = useState(defaultValues?.dose || '');
-  const [times, setTimes] = useState(defaultValues?.times?.join(', ') || '');
-  const [notes, setNotes] = useState(defaultValues?.notes || '');
-  const [timesError, setTimesError] = useState(null);
+  const { register, handleSubmit, formState } = useForm({
+    defaultValues: defaultValues
+      ? { ...defaultValues, times: defaultValues.times?.join(', ') }
+      : undefined,
+  });
 
-  const submit = () => {
-    if (!TIME_LIST_PATTERN.test(times.trim())) {
-      setTimesError('Formato inválido, usa HH:mm separado por comas (ej. 08:00, 20:00)');
-      return;
-    }
-    setTimesError(null);
+  const submit = (values) =>
     onSubmit({
-      name,
-      dose,
-      times: times.split(',').map((t) => t.trim()).filter(Boolean),
-      notes: notes || undefined,
+      ...values,
+      times: values.times
+        .split(',')
+        .map((t) => t.trim())
+        .filter(Boolean),
     });
-  };
 
   return (
-    <View style={{ gap: spacing.lg }}>
+    <form onSubmit={handleSubmit(submit)} style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
       <Banner tone="error">{error}</Banner>
-      <TextField label="Medicamento" value={name} onChangeText={setName} />
-      <TextField label="Dosis" placeholder="Ej. 500mg" value={dose} onChangeText={setDose} />
-      <TextField
+      <Input
+        label="Medicamento"
+        id="name"
+        error={formState.errors.name?.message}
+        {...register('name', { required: 'Requerido', maxLength: 150 })}
+      />
+      <Input
+        label="Dosis"
+        id="dose"
+        placeholder="Ej. 500mg"
+        error={formState.errors.dose?.message}
+        {...register('dose', { required: 'Requerido', maxLength: 50 })}
+      />
+      <Input
         label="Horarios"
+        id="times"
         placeholder="Ej. 08:00, 14:00, 20:00"
         hint="Separados por coma, formato 24h."
-        error={timesError}
-        value={times}
-        onChangeText={setTimes}
+        error={formState.errors.times?.message}
+        {...register('times', {
+          required: 'Requerido',
+          pattern: { value: TIME_LIST_PATTERN, message: 'Formato inválido, usa HH:mm separado por comas' },
+        })}
       />
-      <TextField label="Notas (opcional)" value={notes} onChangeText={setNotes} multiline />
-      <Button title="Guardar medicamento" loading={loading} disabled={!name || !dose || !times} onPress={submit} />
-    </View>
+      <Input label="Notas (opcional)" as="textarea" id="notes" {...register('notes', { maxLength: 300 })} />
+      <Button type="submit" loading={loading}>
+        Guardar medicamento
+      </Button>
+    </form>
   );
 };
